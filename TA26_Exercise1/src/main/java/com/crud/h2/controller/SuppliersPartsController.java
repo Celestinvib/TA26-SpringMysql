@@ -29,13 +29,13 @@ public class SuppliersPartsController {
 	}
 	
 	@PostMapping("/suministros")
-	public SuppliersParts saveSupplier(@RequestBody SuppliersParts supplierParts) {
+	public SuppliersParts saveSupplierParts(@RequestBody SuppliersParts supplierParts) {
 		
 		return suppliersPartsServiceImpl.saveSuppliersParts(supplierParts);
 	}
 	
 	@GetMapping("/suministros/{id}")
-	public SuppliersParts supplierXID(@PathVariable(name="id") Long id) {
+	public SuppliersParts supplierXID(@PathVariable(name="id") int id) {
 		
 		SuppliersParts supplierParts_xid= new SuppliersParts();
 		
@@ -47,7 +47,7 @@ public class SuppliersPartsController {
 	}
 	
 	@PutMapping("/suministros/{id}")
-	public SuppliersParts updateSupplier(@PathVariable(name="id")Long id,@RequestBody SuppliersParts supplierParts) {
+	public SuppliersParts updateSupplier(@PathVariable(name="id")int id,@RequestBody SuppliersParts supplierParts) {
 		
 		SuppliersParts supplierPartsSelected= new SuppliersParts();
 		SuppliersParts supplierPartsUpdated = new SuppliersParts();
@@ -66,7 +66,7 @@ public class SuppliersPartsController {
 	}
 	
 	@DeleteMapping("/suministros/{id}")
-	public void deleteSupplier(@PathVariable(name="id")Long id) {
+	public void deleteSupplier(@PathVariable(name="id")int id) {
 		suppliersPartsServiceImpl.deleteSuppliersParts(id);
 	}	
 }

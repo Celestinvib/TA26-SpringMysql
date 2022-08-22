@@ -20,12 +20,12 @@ public class Supplier {
 	/**Attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find last value and increment from final id of db
-	private Long id;
+	private int id;
 
 	private String name;
 	
-    @OneToMany
-    @JoinColumn(name="id")
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "supplier")
     private List<SuppliersParts> supplierParts;
 
 	/**Constructors */
@@ -37,7 +37,7 @@ public class Supplier {
 	 * @param id
 	 * @param name
 	 */
-	public Supplier(Long id, String name) {
+	public Supplier(int id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -47,14 +47,14 @@ public class Supplier {
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

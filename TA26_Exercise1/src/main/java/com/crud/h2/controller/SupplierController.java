@@ -35,7 +35,7 @@ public class SupplierController {
 	}
 	
 	@GetMapping("/proveedores/{id}")
-	public Supplier supplierXID(@PathVariable(name="id") Long id) {
+	public Supplier supplierXID(@PathVariable(name="id") int id) {
 		
 		Supplier supplier_xid= new Supplier();
 		
@@ -47,7 +47,7 @@ public class SupplierController {
 	}
 	
 	@PutMapping("/proveedores/{id}")
-	public Supplier updateSupplier(@PathVariable(name="id")Long id,@RequestBody Supplier supplier) {
+	public Supplier updateSupplier(@PathVariable(name="id")int id,@RequestBody Supplier supplier) {
 		
 		Supplier supplierSelected= new Supplier();
 		Supplier supplierUpdated = new Supplier();
@@ -64,7 +64,7 @@ public class SupplierController {
 	}
 	
 	@DeleteMapping("/proveedores/{id}")
-	public void deleteSupplier(@PathVariable(name="id")Long id) {
+	public void deleteSupplier(@PathVariable(name="id")int id) {
 		supplierServiceImpl.deleteSupplier(id);
 	}	
 	

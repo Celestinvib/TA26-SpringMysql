@@ -26,9 +26,9 @@ public class PartServiceImpl implements IPartService{
 	}
 
 	@Override
-	public Part partXID(Long code) {
+	public Part partXID(int id) {
 		
-		return iPartDAO.findById(code).get();
+		return iPartDAO.findById(id).get();
 	}
 
 	@Override
@@ -38,8 +38,8 @@ public class PartServiceImpl implements IPartService{
 	}
 
 	@Override
-	public void deletePart(Long code) {
+	public void deletePart(int id) {
 		
-		iPartDAO.deleteById(code);
+		iPartDAO.deleteById(id);
 	}
 }

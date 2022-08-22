@@ -26,7 +26,7 @@ public class SupplierServiceImpl implements ISupplierService{
 	}
 
 	@Override
-	public Supplier supplierXID(Long id) {
+	public Supplier supplierXID(int id) {
 		
 		return iSupplierDAO.findById(id).get();
 	}
@@ -38,7 +38,7 @@ public class SupplierServiceImpl implements ISupplierService{
 	}
 
 	@Override
-	public void deleteSupplier(Long id) {
+	public void deleteSupplier(int id) {
 		
 		iSupplierDAO.deleteById(id);
 	}

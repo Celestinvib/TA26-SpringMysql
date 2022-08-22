@@ -10,9 +10,9 @@ public interface IPartService {
 	
 	public Part savePart(Part part);//Save a new part "CREATE"
 	
-	public Part partXID(Long code); //Read data from a part "READ"
+	public Part partXID(int id); //Read data from a part "READ"
 			
 	public Part updatePart(Part part); //Update part data "UPDATE"
 	
-	public void deletePart(Long code);// Delete a part via id "DELETE"
+	public void deletePart(int id);// Delete a part via id "DELETE"
 }

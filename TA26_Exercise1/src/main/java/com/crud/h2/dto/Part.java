@@ -19,12 +19,14 @@ public class Part {
 	/**Attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find last value and increment from final id of db
-	private Long code;
+	private int id;
+	
+	private int code;
 
 	private String name;
 	
-    @OneToMany
-    @JoinColumn(name="code")
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "part")
     private List<SuppliersParts> supplierParts;
 
 	/**Constructors */
@@ -33,29 +35,51 @@ public class Part {
 		
 	}
 
+	
+
 	/**
 	 * @param id
+	 * @param code
 	 * @param name
 	 */
-	public Part(Long code, String name) {
+	public Part(int id, int code, String name) {
+		this.id = id;
 		this.code = code;
 		this.name = name;
 	}
 
 
+
 	/**Getters y Setters*/
+	
 	
 	/**
 	 * @return the code
 	 */
-	public Long getCode() {
+	public int getCode() {
 		return code;
 	}
 
 	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	/**
 	 * @param code the code to set
 	 */
-	public void setCode(Long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -94,7 +118,7 @@ public class Part {
 	 */
 	@Override
 	public String toString() {
-		return "Pieza [codigo=" + code + ", nombre=" + name + "]";
+		return "Pieza [id=" + id + ", code=" + code +", nombre=" + name + "]";
 	}
 	
 

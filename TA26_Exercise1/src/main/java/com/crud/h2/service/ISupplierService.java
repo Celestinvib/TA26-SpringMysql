@@ -10,9 +10,9 @@ public interface ISupplierService {
 	
 	public Supplier saveSupplier(Supplier supplier);//Save a new supplier "CREATE"
 	
-	public Supplier supplierXID(Long id); //Read data from a supplier "READ"
+	public Supplier supplierXID(int id); //Read data from a supplier "READ"
 			
 	public Supplier updateSupplier(Supplier supplier); //Update supplier data "UPDATE"
 	
-	public void deleteSupplier(Long id);// Delete a supplier via id "DELETE"
+	public void deleteSupplier(int id);// Delete a supplier via id "DELETE"
 }

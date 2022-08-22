@@ -35,11 +35,11 @@ public class PartController {
 	}
 	
 	@GetMapping("/piezas/{id}")
-	public Part partXID(@PathVariable(name="code") Long code) {
+	public Part partXID(@PathVariable(name="id") int id) {
 		
 		Part part_xid= new Part();
 		
-		part_xid= partServiceImpl.partXID(code);
+		part_xid= partServiceImpl.partXID(id);
 		
 		System.out.println("Piezas XID: "+part_xid);
 		
@@ -47,12 +47,12 @@ public class PartController {
 	}
 	
 	@PutMapping("/piezas/{id}")
-	public Part updatePart(@PathVariable(name="code")Long code,@RequestBody Part part) {
+	public Part updatePart(@PathVariable(name="id")int id,@RequestBody Part part) {
 		
 		Part partSelected= new Part();
 		Part partUpdated = new Part();
 		
-		partSelected= partServiceImpl.partXID(code);
+		partSelected= partServiceImpl.partXID(id);
 		
 		partSelected.setName(part.getName());
 	
@@ -64,7 +64,7 @@ public class PartController {
 	}
 	
 	@DeleteMapping("/piezas/{id}")
-	public void deletePart(@PathVariable(name="code")Long code) {
-		partServiceImpl.deletePart(code);
+	public void deletePart(@PathVariable(name="id")int id) {
+		partServiceImpl.deletePart(id);
 	}	
 }

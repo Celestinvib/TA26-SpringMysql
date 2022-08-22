@@ -10,9 +10,9 @@ public interface ISuppliersPartsService {
 		
 		public SuppliersParts saveSuppliersParts(SuppliersParts supplierParts);//Save a new supplierParts "CREATE"
 		
-		public SuppliersParts supplierPartsXID(Long id); //Read data from a supplierParts "READ"
+		public SuppliersParts supplierPartsXID(int id); //Read data from a supplierParts "READ"
 				
 		public SuppliersParts updateSuppliersParts(SuppliersParts supplierParts); //Update supplierParts data "UPDATE"
 		
-		public void deleteSuppliersParts(Long id);// Delete a supplierParts via id "DELETE"
+		public void deleteSuppliersParts(int id);// Delete a supplierParts via id "DELETE"
 }

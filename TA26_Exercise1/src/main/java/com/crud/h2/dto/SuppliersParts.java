@@ -16,7 +16,7 @@ public class SuppliersParts {
 	/**Attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find last value and increment from final id of db
-	private Long id;
+	private int id;
 	
 	
 	@ManyToOne
@@ -41,7 +41,7 @@ public class SuppliersParts {
 	 * @param part
 	 * @param price
 	 */
-	public SuppliersParts(Long id, Supplier supplier, Part part, int price) {
+	public SuppliersParts(int id, Supplier supplier, Part part, int price) {
 		this.id = id;
 		this.supplier = supplier;
 		this.part = part;
@@ -53,14 +53,14 @@ public class SuppliersParts {
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
