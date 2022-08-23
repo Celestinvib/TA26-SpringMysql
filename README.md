@@ -1,6 +1,9 @@
 # TA26-SpringMysql-Ex1
-### URIs endpoints:
-  
+
+#### Heroku-Deploy -> https://cka-ta26-ex1.herokuapp.com
+
+### URIs endpoints: 
+
 ```
 Proveedores
 GET       /api/proveedores
