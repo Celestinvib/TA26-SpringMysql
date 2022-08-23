@@ -54,6 +54,7 @@ public class PartController {
 		
 		partSelected= partServiceImpl.partXID(id);
 		
+		partSelected.setCode(part.getCode());
 		partSelected.setName(part.getName());
 	
 		partUpdated = partServiceImpl.updatePart(partSelected);
